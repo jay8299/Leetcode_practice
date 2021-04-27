@@ -59,3 +59,24 @@ class Solution:
                 break
             count+=1
         return count
+
+
+"""
+# Solution 2 using Heap
+
+63 / 63 test cases passed.
+Status: Accepted
+Runtime: 800 ms
+Memory Usage: 28.1 MB
+"""
+
+class Solution:
+    def maxIceCream(self, costs: List[int], coins: int) -> int:
+        heapify(costs)
+        count = 0
+        while len(costs) > 0 and coins - costs[0] >= 0:    
+            
+                coins -= heappop(costs)
+                count += 1
+                
+        return count
